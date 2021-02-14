@@ -60,6 +60,10 @@ export default {
         { text: "Carbs (g)", value: "carbs" },
         { text: "Protein (g)", value: "protein" },
         { text: "Iron (%)", value: "iron" },
+        { text: "xxx (%)", value: "x" },
+        { text: "yyy (%)", value: "y" },
+        { text: "zzz (%)", value: "z" },
+        { text: "www (%)", value: "w" },
       ],
       desserts: [
         {
@@ -69,6 +73,10 @@ export default {
           carbs: 24,
           protein: 4.0,
           iron: "1%",
+          x: 55,
+          y: 43,
+          z: 22,
+          w: 1002,
         },
         {
           name: "Ice cream sandwich",
@@ -77,6 +85,10 @@ export default {
           carbs: 37,
           protein: 4.3,
           iron: "1%",
+          x: 55,
+          y: 43,
+          z: 22,
+          w: 1002,
         },
         {
           name: "Eclair",
@@ -85,6 +97,10 @@ export default {
           carbs: 23,
           protein: 6.0,
           iron: "7%",
+          x: 55,
+          y: 43,
+          z: 22,
+          w: 1002,
         },
         {
           name: "Cupcake",
@@ -93,10 +109,15 @@ export default {
           carbs: 67,
           protein: 4.3,
           iron: "8%",
+          x: 55,
+          y: 43,
+          z: 22,
+          w: 1002,
         },
       ],
     };
   },
+
   watch: {
     selected: function () {
       console.log(this.selected);
