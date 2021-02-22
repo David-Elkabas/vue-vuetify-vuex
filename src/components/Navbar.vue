@@ -4,12 +4,28 @@
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="text-uppercase">
-        <span class="font-weight-light">Todo</span>
-        <span class="bold">Food</span>
+        <span class="font-weight-light">running </span>
+        <span class="bold">company</span>
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn color="orange lighten-2">
+      <v-btn class="mx-2" fab dark color=" green darken-1">
+        <v-icon dark> mdi-folder-upload</v-icon>
+      </v-btn>
+
+      <v-btn class="mx-2" fab dark color=" cyan darken-2">
+        <v-icon dark> mdi-pencil </v-icon>
+      </v-btn>
+
+      <v-btn class="mx-2" fab dark color=" indigo">
+        <v-icon dark> mdi-code-json </v-icon>
+      </v-btn>
+
+      <v-btn class="mx-2" fab dark color="purple">
+        <v-icon dark> mdi-content-save </v-icon>
+      </v-btn>
+
+      <v-btn class="mx-2" color="orange lighten-2">
         <!-- TODO-change color -->
         <span>Sign Out</span>
         <v-icon right>mdi-export</v-icon>

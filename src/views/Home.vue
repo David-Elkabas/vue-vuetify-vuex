@@ -1,23 +1,24 @@
 
     <template>
-  <v-container>
-    <v-card width="400">
-      <v-row justify="space-between">
-        <v-col>
-          <template>
-            <v-sheet class="pa-2 warning lighten-2">
-              <v-text-field
-                v-model="search"
-                label="Search Company Directory"
-                dark
-                flat
-                solo-inverted
-                hide-details
-                clearable
-                clear-icon="mdi-close-circle-outline"
-              ></v-text-field>
-            </v-sheet>
+  <v-container fluid>
+    <v-row justify="start">
+      <v-col cols="4">
+        <v-card width="400">
+          <v-sheet class="pa-2 warning lighten-2">
+            <v-text-field
+              v-model="search"
+              label="Search"
+              dark
+              flat
+              solo-inverted
+              hide-details
+              clearable
+              clear-icon="mdi-close-circle-outline"
+            ></v-text-field>
+          </v-sheet>
+          <v-card-text>
             <v-treeview
+              dense
               activatable
               :items="items"
               open-all
@@ -33,18 +34,21 @@
                 </v-icon>
               </template>
             </v-treeview>
-          </template>
-        </v-col>
-      </v-row>
-    </v-card>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col>
+        <TreeProps />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
-
-
-
 <script>
+import TreeProps from "../components/TreeProps.vue";
 export default {
+  components: { TreeProps },
+
   data: () => ({
     search: null,
     caseSensitive: false,

@@ -1,47 +1,62 @@
 <template>
-  <v-app>
-    <v-main>
-      <h1 class="subheading grey--text pb-3">Recipes</h1>
-      <v-card dark>
-        <!-- no-gutters -->
-        <v-card-title>
-          Nutrition
-          <v-spacer></v-spacer>
-          <v-text-field
-            v-model="search"
-            append-icon="mdi-magnify"
-            label="Search"
-            single-line
-            hide-details
+  <v-container>
+    <h1 class="subheading grey--text pb-3">Recipes</h1>
+    <!-- <v-card color="grey lighten-4" flat> </v-card> -->
+
+    <v-card dark>
+      <v-card-title>
+        Nutrition
+        <v-spacer></v-spacer>
+        <v-text-field
+          class="mt-n3"
+          v-model="search"
+          append-icon="mdi-magnify"
+          label="Search"
+          single-line
+          hide-details
+          color="orange lighten-2"
+        ></v-text-field>
+      </v-card-title>
+
+      <v-toolbar class="mt-n3 mb-2" height="50" flat>
+        <v-btn icon>
+          <v-icon>mdi-plus</v-icon>
+        </v-btn>
+        <v-btn icon>
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
+        <v-btn icon>
+          <v-icon>mdi-pencil</v-icon>
+        </v-btn>
+      </v-toolbar>
+      <!-- will need to change the :items="allRecipes.desserts" -->
+      <v-data-table
+        :headers="headers"
+        :items="allRecipes.desserts"
+        :items-per-page="5"
+        class="elevation-1"
+        v-model="selected"
+        :single-select="singleSelect"
+        show-select
+        item-key="name"
+        :search="search"
+      >
+        <template v-slot:top>
+          <v-switch
+            v-model="singleSelect"
+            label="Single select"
+            class="pr-3 my-n5"
             color="orange lighten-2"
-          ></v-text-field>
-        </v-card-title>
-        <v-data-table
-          :headers="headers"
-          :items="desserts"
-          :items-per-page="5"
-          class="elevation-1"
-          v-model="selected"
-          :single-select="singleSelect"
-          show-select
-          item-key="name"
-          :search="search"
-        >
-          <template v-slot:top>
-            <v-switch
-              v-model="singleSelect"
-              label="Single select"
-              class="pr-3 my-n5"
-              color="orange lighten-2"
-            ></v-switch>
-          </template>
-        </v-data-table>
-      </v-card>
-    </v-main>
-  </v-app>
+          ></v-switch>
+        </template>
+      </v-data-table>
+    </v-card>
+  </v-container>
 </template>
 
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
+
 export default {
   data() {
     return {
@@ -65,63 +80,20 @@ export default {
         { text: "zzz (%)", value: "z" },
         { text: "www (%)", value: "w" },
       ],
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-          fat: 6.0,
-          carbs: 24,
-          protein: 4.0,
-          iron: "1%",
-          x: 55,
-          y: 43,
-          z: 22,
-          w: 1002,
-        },
-        {
-          name: "Ice cream sandwich",
-          calories: 237,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: "1%",
-          x: 55,
-          y: 43,
-          z: 22,
-          w: 1002,
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: "7%",
-          x: 55,
-          y: 43,
-          z: 22,
-          w: 1002,
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: "8%",
-          x: 55,
-          y: 43,
-          z: 22,
-          w: 1002,
-        },
-      ],
     };
   },
-
-  watch: {
-    selected: function () {
-      console.log(this.selected);
-    },
+  async created() {
+    // this.$store.dispatch("fetchRecipes");
+    // this.$store.dispatch("fetchTodos");
+    this.fetchTodos();
+    this.fetchRecipes();
+  },
+  methods: {
+    ...mapActions(["fetchTodos", "fetchRecipes"]),
+  },
+  computed: {
+    ...mapState(["Recipes"]),
+    ...mapGetters(["allTodos", "allRecipes"]),
   },
 };
 </script>

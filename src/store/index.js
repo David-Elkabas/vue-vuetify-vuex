@@ -6,36 +6,52 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    count: 0,
-    posts: []
+
+    Recipes: [],
+    todos: [],
   },
   getters: {
-    getCount: (state) => state.count
-
-  },
-  mutations: {
-    increment(state) {
-      state.count++
+    allTodos: (state) => {
+      return state.todos
     },
-    SET_POST(state, posts) {
-      state.posts = posts
+    allRecipes: (state) => {
+      return state.Recipes
     }
   },
+  mutations: {
+
+    setRecipes(state, Recipes) {
+      state.Recipes = Recipes
+    },
+    setTodos(state, todos) {
+      state.todos = todos
+    },
+  },
   actions: {
-    async fetchDB({ commit }) {
+    async fetchRecipes({ commit }) {
       try {
         const res = await axios.get("http://localhost:3000/widget");
-        let posts = res.data
+        let Recipes = res.data
         console.log(res.data);
-        commit('SET_POST', posts)
+        commit('setRecipes', Recipes)
+
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async fetchTodos({ commit }) {
+      try {
+        const res = await axios.get("http://localhost:3000/todos");
+        let todos = res.data
+
+        commit('setTodos', todos)
+        console.log(this.state.todos);
 
       } catch (e) {
         console.log(e);
       }
     }
-    // async fetchDB(state){
-    //   const response = await 
-    // }
+
   },
   modules: {
   }
