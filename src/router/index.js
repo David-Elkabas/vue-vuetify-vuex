@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Recipe from '../views/Recipe.vue'
+import TestOnly from '../views/TestOnly.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +22,11 @@ const routes = [
     path: '/recipe',
     name: 'Recipe',
     component: Recipe
+  },
+  {
+    path: '/testonly',
+    name: 'testOnly',
+    component: TestOnly
   }
 ]
 

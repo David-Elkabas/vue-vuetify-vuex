@@ -2,10 +2,13 @@
   <v-data-table
     :headers="headers"
     :items="allRecipes.desserts"
-    class="elevation-1"
+    class="elevation-1 table1"
     item-key="name"
     hide-default-footer
     height="400"
+    fixed-header
+    my-data-table
+    dark
   >
   </v-data-table>
 </template>
@@ -44,3 +47,14 @@ export default {
   },
 };
 </script>
+<style scope>
+.table1 td {
+  height: 70px !important;
+}
+.table1 th {
+  height: 50px !important;
+}
+</style>
+
+
+

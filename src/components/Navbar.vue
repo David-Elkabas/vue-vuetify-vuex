@@ -76,6 +76,7 @@ export default {
         { icon: "mdi-inbox-arrow-down", text: "Home", route: "/" },
         { icon: "mdi-deathly-hallows", text: "About", route: "/about" },
         { icon: "mdi-account-details", text: "Recipe", route: "/recipe" },
+        { icon: "mdi-test-tube", text: "test only", route: "/testonly" },
       ],
     };
   },
