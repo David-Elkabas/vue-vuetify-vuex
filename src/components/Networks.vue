@@ -1,16 +1,17 @@
 <template>
-  <v-data-table
-    :headers="headers"
-    :items="allRecipes.desserts"
-    class="elevation-1 table1"
-    item-key="name"
-    hide-default-footer
-    height="400"
-    fixed-header
-    my-data-table
-    dark
-  >
-  </v-data-table>
+  <div id="container2">
+    <v-data-table
+      v-on:scroll="handleScroll"
+      :headers="headers"
+      :items="allRecipes.desserts"
+      class="elevation-1 table1 mx-1"
+      item-key="name"
+      hide-default-footer
+      fixed-header
+      dark
+    >
+    </v-data-table>
+  </div>
 </template>
 
 <script>
@@ -33,23 +34,24 @@ export default {
     };
   },
   async created() {
-    // this.$store.dispatch("fetchRecipes");
-    // this.$store.dispatch("fetchTodos");
-    this.fetchTodos();
     this.fetchRecipes();
   },
   methods: {
-    ...mapActions(["fetchTodos", "fetchRecipes"]),
+    ...mapActions(["fetchRecipes"]),
+
+    handleScroll: function (e) {
+      console.log(e);
+    },
   },
   computed: {
     ...mapState(["Recipes"]),
-    ...mapGetters(["allTodos", "allRecipes"]),
+    ...mapGetters(["allRecipes"]),
   },
 };
 </script>
 <style scope>
 .table1 td {
-  height: 70px !important;
+  height: 71px !important;
 }
 .table1 th {
   height: 50px !important;

@@ -85,15 +85,15 @@ export default {
   async created() {
     // this.$store.dispatch("fetchRecipes");
     // this.$store.dispatch("fetchTodos");
-    this.fetchTodos();
+
     this.fetchRecipes();
   },
   methods: {
-    ...mapActions(["fetchTodos", "fetchRecipes"]),
+    ...mapActions(["fetchRecipes"]),
   },
   computed: {
     ...mapState(["Recipes"]),
-    ...mapGetters(["allTodos", "allRecipes"]),
+    ...mapGetters(["allRecipes"]),
   },
 };
 </script>

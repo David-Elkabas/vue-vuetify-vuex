@@ -4,7 +4,7 @@
     <v-row justify="start">
       <v-col cols="4">
         <v-card width="400">
-          <v-sheet class="pa-2 warning lighten-2">
+          <v-sheet class="pa-2 warning">
             <v-text-field
               v-model="search"
               label="Search"

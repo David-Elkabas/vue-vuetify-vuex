@@ -1,169 +1,160 @@
 <template>
   <div>
-    <div
-      id="container"
-      @scroll="handleScroll($event, 'container2')"
-      style="
-        background-color: yellow;
-        height: 400px;
-        width: 400px;
-        overflow-y: scroll;
-      "
-    >
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-        corporis eligendi in accusantium. Accusantium nobis qui animi porro,
-        quos quisquam aut odit dolore, dolor ab sed hic magnam possimus eius
-        fugiat amet. Quae sequi aliquam, rem qui fuga doloremque quaerat
-        perspiciatis beatae pariatur. Libero iusto, perspiciatis porro
-        perferendis magni fugiat recusandae aut in blanditiis accusamus vitae
-        molestiae id, nemo sit ex. Quasi est ex corrupti repellat tempore nisi
-        eum natus dolore suscipit. Eveniet, id error libero quibusdam voluptas
-        cum vitae facere consectetur, accusantium sit necessitatibus perferendis
-        sapiente soluta est quaerat iusto laborum incidunt numquam quisquam
-        animi unde hic dolore minus! Consequuntur deleniti aliquam laboriosam
-        voluptatibus exercitationem officia ratione explicabo molestias a
-        voluptate? Aut sit in itaque deleniti corrupti, laudantium, harum
-        reprehenderit veniam, fuga totam ea libero exercitationem. Ex
-        dignissimos consectetur similique alias laudantium explicabo dolore
-        aperiam illum optio ea quae asperiores inventore pariatur maxime eius
-        maiores iusto ad, nobis, eaque in, repellendus cumque totam? Officiis
-        magnam tempore commodi sapiente facilis corporis omnis est harum
-        architecto deserunt, aliquid facere cupiditate? Expedita, est nostrum!
-        Eligendi at cupiditate incidunt accusamus quos vero ipsum quae eaque ut
-        ducimus minima sit corrupti molestiae suscipit excepturi quisquam
-        impedit quis autem aliquam, voluptatibus provident? Nihil voluptas quo,
-        doloremque vero modi incidunt porro expedita necessitatibus quidem
-        molestiae. Explicabo autem cupiditate laboriosam sit architecto
-        blanditiis quas consequuntur dolorem maiores atque delectus nostrum ad
-        eius nisi, nihil ea dignissimos enim animi? In beatae accusamus aliquid
-        exercitationem facere ducimus voluptatum laudantium, dignissimos unde
-        aperiam ipsa consectetur, dolor fuga sed quam eos autem necessitatibus
-        voluptates porro quisquam. Voluptatem nam ipsum beatae aliquid nostrum
-        repellendus, saepe nisi recusandae accusantium, explicabo qui, optio
-        cupiditate ab autem dolorem iusto eaque eligendi sapiente accusamus a
-        fuga voluptate dolore temporibus consequatur. Aut deserunt minus
-        temporibus necessitatibus. Autem facilis illo nemo. Obcaecati quibusdam
-        inventore consequatur labore culpa autem illum, exercitationem ratione
-        repellendus quos nisi illo at explicabo aperiam neque ipsa? Deserunt,
-        at, veritatis voluptatem harum sint vel quod error ex quibusdam sapiente
-        magni autem tempore asperiores aliquam inventore et laborum? Suscipit
-        porro consequuntur, quis praesentium, laborum esse inventore similique
-        ratione perspiciatis deleniti labore eligendi sequi, aut aliquid commodi
-        culpa? Omnis, provident. Sed repellat natus voluptates qui illo quasi
-        sunt perferendis aliquam quae molestias! Ad similique fugit cupiditate,
-        eaque officiis eius in rem maiores? Porro, inventore nostrum eligendi,
-        qui voluptate ullam pariatur repellendus, quos dignissimos cum quas
-        velit exercitationem quibusdam ut molestias molestiae fugit vitae
-        facere. Esse ex quisquam atque totam quaerat accusamus ab blanditiis
-        tempore fugiat harum, ipsa eaque consequatur? Eligendi voluptatibus
-        earum suscipit nesciunt voluptatum molestias in commodi, nulla, nihil,
-        totam vel laudantium? Nemo, totam libero alias eius id distinctio facere
-        dicta. Neque dolorum velit veniam dolor sit rem iusto vel, laudantium ut
-        officiis atque sapiente quis reiciendis dolores quasi repudiandae
-        repellendus voluptatibus dignissimos officia minima nesciunt. Ut saepe a
-        rem ab nemo culpa nisi quibusdam ex voluptatibus porro, error minus,
-        fugit omnis rerum quos placeat recusandae aliquid optio consectetur
-        voluptates vero numquam, commodi itaque. Eos expedita magni obcaecati
-        incidunt numquam quisquam perferendis, praesentium voluptate animi
-        consequatur!
-      </p>
+    <div class="pa-10" style="height: 100px; width: 100px">
+      <p>{{ allCombinations.category1.base1.options }}</p>
     </div>
 
-    <div
-      @scroll="handleScroll($event, 'container')"
-      id="container2"
-      style="
-        background-color: green;
-        height: 400px;
-        width: 400px;
-        overflow-y: scroll;
-      "
-    >
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-        corporis eligendi in accusantium. Accusantium nobis qui animi porro,
-        quos quisquam aut odit dolore, dolor ab sed hic magnam possimus eius
-        fugiat amet. Quae sequi aliquam, rem qui fuga doloremque quaerat
-        perspiciatis beatae pariatur. Libero iusto, perspiciatis porro
-        perferendis magni fugiat recusandae aut in blanditiis accusamus vitae
-        molestiae id, nemo sit ex. Quasi est ex corrupti repellat tempore nisi
-        eum natus dolore suscipit. Eveniet, id error libero quibusdam voluptas
-        cum vitae facere consectetur, accusantium sit necessitatibus perferendis
-        sapiente soluta est quaerat iusto laborum incidunt numquam quisquam
-        animi unde hic dolore minus! Consequuntur deleniti aliquam laboriosam
-        voluptatibus exercitationem officia ratione explicabo molestias a
-        voluptate? Aut sit in itaque deleniti corrupti, laudantium, harum
-        reprehenderit veniam, fuga totam ea libero exercitationem. Ex
-        dignissimos consectetur similique alias laudantium explicabo dolore
-        aperiam illum optio ea quae asperiores inventore pariatur maxime eius
-        maiores iusto ad, nobis, eaque in, repellendus cumque totam? Officiis
-        magnam tempore commodi sapiente facilis corporis omnis est harum
-        architecto deserunt, aliquid facere cupiditate? Expedita, est nostrum!
-        Eligendi at cupiditate incidunt accusamus quos vero ipsum quae eaque ut
-        ducimus minima sit corrupti molestiae suscipit excepturi quisquam
-        impedit quis autem aliquam, voluptatibus provident? Nihil voluptas quo,
-        doloremque vero modi incidunt porro expedita necessitatibus quidem
-        molestiae. Explicabo autem cupiditate laboriosam sit architecto
-        blanditiis quas consequuntur dolorem maiores atque delectus nostrum ad
-        eius nisi, nihil ea dignissimos enim animi? In beatae accusamus aliquid
-        exercitationem facere ducimus voluptatum laudantium, dignissimos unde
-        aperiam ipsa consectetur, dolor fuga sed quam eos autem necessitatibus
-        voluptates porro quisquam. Voluptatem nam ipsum beatae aliquid nostrum
-        repellendus, saepe nisi recusandae accusantium, explicabo qui, optio
-        cupiditate ab autem dolorem iusto eaque eligendi sapiente accusamus a
-        fuga voluptate dolore temporibus consequatur. Aut deserunt minus
-        temporibus necessitatibus. Autem facilis illo nemo. Obcaecati quibusdam
-        inventore consequatur labore culpa autem illum, exercitationem ratione
-        repellendus quos nisi illo at explicabo aperiam neque ipsa? Deserunt,
-        at, veritatis voluptatem harum sint vel quod error ex quibusdam sapiente
-        magni autem tempore asperiores aliquam inventore et laborum? Suscipit
-        porro consequuntur, quis praesentium, laborum esse inventore similique
-        ratione perspiciatis deleniti labore eligendi sequi, aut aliquid commodi
-        culpa? Omnis, provident. Sed repellat natus voluptates qui illo quasi
-        sunt perferendis aliquam quae molestias! Ad similique fugit cupiditate,
-        eaque officiis eius in rem maiores? Porro, inventore nostrum eligendi,
-        qui voluptate ullam pariatur repellendus, quos dignissimos cum quas
-        velit exercitationem quibusdam ut molestias molestiae fugit vitae
-        facere. Esse ex quisquam atque totam quaerat accusamus ab blanditiis
-        tempore fugiat harum, ipsa eaque consequatur? Eligendi voluptatibus
-        earum suscipit nesciunt voluptatum molestias in commodi, nulla, nihil,
-        totam vel laudantium? Nemo, totam libero alias eius id distinctio facere
-        dicta. Neque dolorum velit veniam dolor sit rem iusto vel, laudantium ut
-        officiis atque sapiente quis reiciendis dolores quasi repudiandae
-        repellendus voluptatibus dignissimos officia minima nesciunt. Ut saepe a
-        rem ab nemo culpa nisi quibusdam ex voluptatibus porro, error minus,
-        fugit omnis rerum quos placeat recusandae aliquid optio consectetur
-        voluptates vero numquam, commodi itaque. Eos expedita magni obcaecati
-        incidunt numquam quisquam perferendis, praesentium voluptate animi
-        consequatur!
-      </p>
+    <div>
+      <v-card dark>
+        <v-data-table
+          :headers="$store.state.bases"
+          :items="items4"
+          hide-default-footer
+          class="transparent elevation-0 mt-4 table2"
+          disable-pagination
+          disable-sort
+          fixed-header
+        >
+          <template v-slot:header>
+            <thead>
+              <tr>
+                <th
+                  style="text-align: center"
+                  :colspan="allSizeOfCategories[0]"
+                >
+                  start
+                </th>
+              </tr>
+              <tr>
+                <th
+                  :colspan="allSizeOfCategories[1]"
+                  style="text-align: center"
+                >
+                  Category 1
+                </th>
+                <th
+                  :colspan="allSizeOfCategories[2]"
+                  style="text-align: center"
+                >
+                  Category 2
+                </th>
+                <th
+                  :colspan="allSizeOfCategories[3]"
+                  style="text-align: center"
+                >
+                  Category 3
+                </th>
+              </tr>
+            </thead>
+          </template>
+          <template v-slot:body="{ items }">
+            <tbody>
+              <tr v-for="item in items" :key="item.id">
+                <td></td>
+                <td
+                  class="px-2"
+                  v-for="index in $store.state.sizeOfRadioCells"
+                  :key="index"
+                >
+                  <v-select
+                    v-for="(title, index) in titles"
+                    :key="index"
+                    attach
+                    :items="title"
+                    item-value="id"
+                    item-text="name"
+                    placeholder="select"
+                  >
+                  </v-select>
+                </td>
+              </tr>
+            </tbody>
+          </template>
+        </v-data-table>
+      </v-card>
     </div>
   </div>
 </template>
-
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
+
 export default {
   data() {
+    // v-select === :items="allCombinations.category1.base1.options"
     return {
-      scrollPosition: 0,
+      firstTime: false,
+      itemsSize: 7,
+      items4: [
+        {
+          id: 1,
+        },
+        {
+          id: 2,
+        },
+        {
+          id: 3,
+        },
+        {
+          id: 4,
+        },
+        {
+          id: 5,
+        },
+        {
+          id: 6,
+        },
+        {
+          id: 7,
+        },
+        {
+          id: 8,
+        },
+        {
+          id: 9,
+        },
+      ],
     };
   },
-  mounted() {},
+  async created() {
+    this.fetchCombinations();
+    this.fetchRecipes();
+  },
   methods: {
-    handleScroll: function (e, scrollName) {
-      var currentScrollPosition = e.srcElement.scrollTop;
-      // console.log(currentScrollPosition);
-      // console.log(e);
-      // console.log(name);
-
-      this.scrollPosition = currentScrollPosition;
-      var container = this.$el.querySelector("#" + scrollName);
-      container.scrollTop = currentScrollPosition;
+    ...mapActions(["fetchCombinations", "fetchRecipes"]),
+    changeFirstTime: function () {
+      this.firstTime = false;
+    },
+  },
+  computed: {
+    ...mapState(["Combinations", "Recipes"]),
+    ...mapGetters(["allCombinations", "allRecipes", "allSizeOfCategories"]),
+    titles: function () {
+      var titles = [["a", "b"]];
+      var temp = [];
+      for (let category in this.Combinations) {
+        for (let base in this.Combinations[category]) {
+          for (let option in this.Combinations[category][base]) {
+            if (option == "options") {
+              for (let person in this.Combinations[category][base][option]) {
+                temp.push(
+                  this.Combinations[category][base][option][person].name
+                );
+              }
+            }
+          }
+        }
+      }
+      console.log(temp);
+      return titles;
     },
   },
 };
 </script>
-
-<style>
+<style scope>
+.table2 td {
+  height: 70px !important;
+}
+.table2 th {
+  height: 50px !important;
+}
 </style>

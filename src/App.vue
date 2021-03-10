@@ -2,7 +2,7 @@
   <v-app>
     <Navbar />
 
-    <v-main class="mx-5 my-5">
+    <v-main class="david">
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -15,3 +15,8 @@ export default {
   components: { Navbar },
 };
 </script>
+<style>
+.david {
+  background: #faffd8;
+}
+</style>

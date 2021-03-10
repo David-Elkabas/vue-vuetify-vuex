@@ -1,5 +1,17 @@
 {
     "widget": {
+        "netsName": [
+            "Frozen Yogurt",
+            "Ice cream sandwich",
+            "Eclair",
+            "cookie",
+            "jon",
+            "pavel",
+            "google",
+            "or",
+            "sagi",
+            "david"
+        ],
         "desserts": [
             {
                 "name": "Frozen Yogurt",
@@ -136,103 +148,137 @@
         ]
     },
     "combinations": {
-        "combo": [
-            {
-                "id": 1,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
+        "category1": {
+            "base1": {
+                "name": "base1",
                 "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "end 1"
+                    }
+                ],
+                "firstText": "select"
             },
-            {
-                "id": 2,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
+            "base2": {
+                "name": "base2",
                 "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "end 2"
+                    }
+                ],
+                "firstText": "show"
             },
-            {
-                "id": 3,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
+            "base3": {
+                "name": "base3",
                 "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
-            },
-            {
-                "id": 4,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
-                "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
-            },
-            {
-                "id": 6,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
-                "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
-            },
-            {
-                "id": 7,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
-                "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
-            },
-            {
-                "id": 8,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
-                "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
-            },
-            {
-                "id": 9,
-                "location": " ",
-                "netName": " ",
-                "firstText": "-",
-                "options": [
-                    "Alabama",
-                    "Georgia",
-                    "Florida",
-                    "New York"
-                ]
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "end 3"
+                    }
+                ],
+                "firstText": "show"
             }
-        ]
+        },
+        "category2": {
+            "base10": {
+                "name": "base10",
+                "options": [
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "George"
+                    }
+                ],
+                "firstText": "select"
+            },
+            "base20": {
+                "name": "base20",
+                "options": [
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "George"
+                    }
+                ],
+                "firstText": "show"
+            }
+        },
+        "category3": {
+            "base100": {
+                "name": "base100",
+                "options": [
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "George"
+                    }
+                ],
+                "firstText": "select"
+            },
+            "base200": {
+                "name": "base200",
+                "options": [
+                    {
+                        "id": 1,
+                        "name": "John"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Harry"
+                    },
+                    {
+                        "id": 3,
+                        "name": "George"
+                    }
+                ],
+                "firstText": "show"
+            }
+        }
     }
 }

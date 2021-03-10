@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <v-app-bar app color="deep-purple" dark clipped-right>
+    <v-app-bar app color="primary" dark clipped-right>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <v-toolbar-title class="text-uppercase">
@@ -9,23 +9,23 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn class="mx-2" fab dark color=" green darken-1">
+      <v-btn class="mx-2" fab dark color=" secondary">
         <v-icon dark> mdi-folder-upload</v-icon>
       </v-btn>
 
-      <v-btn class="mx-2" fab dark color=" cyan darken-2">
+      <v-btn class="mx-2" fab dark color=" secondary">
         <v-icon dark> mdi-pencil </v-icon>
       </v-btn>
 
-      <v-btn class="mx-2" fab dark color=" indigo">
+      <v-btn class="mx-2" fab dark color=" secondary">
         <v-icon dark> mdi-code-json </v-icon>
       </v-btn>
 
-      <v-btn class="mx-2" fab dark color="purple">
+      <v-btn class="mx-2" fab dark color="secondary">
         <v-icon dark> mdi-content-save </v-icon>
       </v-btn>
 
-      <v-btn class="mx-2" color="orange lighten-2">
+      <v-btn class="mx-2" color="warning">
         <!-- TODO-change color -->
         <span>Sign Out</span>
         <v-icon right>mdi-export</v-icon>
@@ -44,7 +44,7 @@
       <v-list nav>
         <v-list-item-group
           v-model="group"
-          active-class="deep-purple--text text--accent-4"
+          active-class="warning--text text--accent-4"
         >
           <v-list-item
             v-for="link in links"

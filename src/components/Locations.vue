@@ -5,11 +5,10 @@
         :headers="tableHeaders"
         :items="items"
         hide-default-footer
-        class="transparent elevation-0 my-4 table2"
+        class="transparent elevation-0 mt-4 table2"
         disable-pagination
         disable-sort
         fixed-header
-        height="500"
       >
         <template v-slot:header>
           <thead>
@@ -27,8 +26,12 @@
           <tbody>
             <tr v-for="item in items" :key="item.id">
               <td></td>
-              <td v-for="index in itemsSize" :key="index">
-                <v-select attach :items="selectItems" placeholder="select">
+              <td class="px-2" v-for="index in itemsSize" :key="index">
+                <v-select
+                  attach
+                  :items="allCombinations.netsName"
+                  placeholder="select"
+                >
                 </v-select>
               </td>
             </tr>
@@ -39,6 +42,8 @@
   </div>
 </template>
 <script>
+import { mapState, mapGetters, mapActions } from "vuex";
+
 export default {
   data() {
     return {
@@ -47,7 +52,6 @@ export default {
         {
           align: "center",
           sortable: false,
-          widths: "100px",
         },
         { text: "base1", value: "base1" },
         { text: "base2", value: "base2" },
@@ -142,11 +146,21 @@ export default {
       ],
     };
   },
+  async created() {
+    this.fetchCombinations();
+  },
+  methods: {
+    ...mapActions(["fetchCombinations"]),
+  },
+  computed: {
+    ...mapState(["Combinations"]),
+    ...mapGetters(["allCombinations"]),
+  },
 };
 </script>
 <style scope>
 .table2 td {
-  height: 65px !important;
+  height: 70px !important;
 }
 .table2 th {
   height: 50px !important;
