@@ -1,14 +1,14 @@
 <template>
   <div>
-    <div class="pa-10" style="height: 100px; width: 100px">
-      <p>{{ allCombinations.category1.base1.options }}</p>
+    <div class="pa-3">
+      <p>{{ Recipes.optionsOfEachBase_byID }}</p>
     </div>
 
     <div>
       <v-card dark>
         <v-data-table
           :headers="$store.state.bases"
-          :items="items4"
+          :items="$store.state.rowsID"
           hide-default-footer
           class="transparent elevation-0 mt-4 table2"
           disable-pagination
@@ -49,18 +49,19 @@
           </template>
           <template v-slot:body="{ items }">
             <tbody>
-              <tr v-for="item in items" :key="item.id">
-                <td></td>
+              <tr v-for="row in items" :key="row.id">
+                <td>{{ row.id }}</td>
                 <td
                   class="px-2"
-                  v-for="index in $store.state.sizeOfRadioCells"
+                  v-for="index in getSizeOfRadioCells"
                   :key="index"
                 >
                   <v-select
-                    v-for="(title, index) in titles"
-                    :key="index"
                     attach
-                    :items="title"
+                    :items="
+                      Recipes.optionsOfEachBase_byID.find((a) => a.id === index)
+                        .options
+                    "
                     item-value="id"
                     item-text="name"
                     placeholder="select"
@@ -80,39 +81,9 @@ import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
-    // v-select === :items="allCombinations.category1.base1.options"
+    // v-select ::== :items="allCombinations.category1.base1.options"
     return {
       firstTime: false,
-      itemsSize: 7,
-      items4: [
-        {
-          id: 1,
-        },
-        {
-          id: 2,
-        },
-        {
-          id: 3,
-        },
-        {
-          id: 4,
-        },
-        {
-          id: 5,
-        },
-        {
-          id: 6,
-        },
-        {
-          id: 7,
-        },
-        {
-          id: 8,
-        },
-        {
-          id: 9,
-        },
-      ],
     };
   },
   async created() {
@@ -127,12 +98,20 @@ export default {
   },
   computed: {
     ...mapState(["Combinations", "Recipes"]),
-    ...mapGetters(["allCombinations", "allRecipes", "allSizeOfCategories"]),
+    ...mapGetters([
+      "allCombinations",
+      "allRecipes",
+      "allSizeOfCategories",
+      "getSizeOfRadioCells",
+    ]),
     titles: function () {
       var titles = [["a", "b"]];
       var temp = [];
       for (let category in this.Combinations) {
         for (let base in this.Combinations[category]) {
+          // if (this.Combinations[category].name == "base1") {
+          //   console.log("here");
+          // }
           for (let option in this.Combinations[category][base]) {
             if (option == "options") {
               for (let person in this.Combinations[category][base][option]) {
@@ -145,6 +124,7 @@ export default {
         }
       }
       console.log(temp);
+      console.log("hello");
       return titles;
     },
   },

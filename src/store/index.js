@@ -10,15 +10,19 @@ export default new Vuex.Store({
 
     Recipes: {},
     Combinations: { category1: { base1: { options: [] } } }, //will have to change category1 to the right prop 
-    sizeOfCategory1: 0,
-    sizeOfCategory2: 0,
-    sizeOfCategory3: 0,
-    sizeOfTheBigHeader: 0,
     bases: [{
       align: "center",
       sortable: false,
     },],
+    sizeOfCategory1: 0,
+    sizeOfCategory2: 0,
+    sizeOfCategory3: 0,
+    sizeOfTheBigHeader: 0,
+    basesNames: [],
     sizeOfRadioCells: 0,
+    rowsID: [],
+    sizeOfNets: 0,
+
   },
   getters: {
     allRecipes: (state) => {
@@ -29,12 +33,19 @@ export default new Vuex.Store({
     },
     allCombinations: (state) => {
       return state.Combinations
+    },
+    getSizeOfRadioCells: (state) => {
+      return state.sizeOfRadioCells
     }
   },
   mutations: {
 
     setRecipes(state, Recipes) {
       state.Recipes = Recipes
+      for (let index in Recipes.netsName) {
+        state.rowsID.push({ id: Number(index) + 1 })
+      }
+
     },
 
     setCombinations(state, Combinations) {
@@ -46,12 +57,11 @@ export default new Vuex.Store({
       for (let i in Combinations) {
         for (let key in Combinations[i]) {
           state.bases.push({ text: key, value: key })
+
           state.sizeOfRadioCells++
+          state.basesNames.push(key)
         }
       }
-
-
-
     },
   },
   actions: {
